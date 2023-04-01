@@ -228,10 +228,7 @@ function createWindow() {
             const newRequestHeaders = Object.assign(
                 {},
                 details.requestHeaders || {},
-                {
-                    'User-Agent':
-                        'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:73.0) Gecko/20100101 Firefox/73.0',
-                }
+                {}
             )
             callback({ requestHeaders: newRequestHeaders })
         }
@@ -243,7 +240,7 @@ function createWindow() {
             webviewTag: false,
             enableRemoteModule: false,
             contextIsolation: true,
-            sandbox: true,
+            sandbox: false,
             nativeWindowOpen: true,
             preload: path.join(
                 app.getAppPath(),
